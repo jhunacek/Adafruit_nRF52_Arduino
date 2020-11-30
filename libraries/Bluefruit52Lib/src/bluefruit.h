@@ -36,11 +36,11 @@
 #define BLE_GATT_ATT_MTU_MAX      247
 #define BLE_MAX_CONNECTION        20 // SD support up to 20 connections
 
-// Allocate more memory for GATT table for 840
-#ifdef NRF52840_XXAA
-  #define CFG_SD_ATTR_TABLE_SIZE    0x1000
-#else
+// Allocate more memory for GATT table for 840/833
+#ifdef NRF52832_XXAA
   #define CFG_SD_ATTR_TABLE_SIZE    0xC00
+#else
+  #define CFG_SD_ATTR_TABLE_SIZE    0x1000
 #endif
 
 #include "BLEUuid.h"

@@ -26,9 +26,11 @@
 #include "flash/flash_nrf5x.h"
 
 #ifdef NRF52840_XXAA
-#define LFS_FLASH_ADDR        0xED000
+  #define LFS_FLASH_ADDR        0xED000
+#elif (defined( NRF52832_XXAA) || defined( NRF52833_XXAA))
+  #define LFS_FLASH_ADDR        0x6D000
 #else
-#define LFS_FLASH_ADDR        0x6D000
+  #error "Unsupported MCU"
 #endif
 
 #define LFS_FLASH_TOTAL_SIZE  (7*FLASH_NRF52_PAGE_SIZE)

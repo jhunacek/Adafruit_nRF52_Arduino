@@ -32,8 +32,10 @@
 
 #ifdef NRF52840_XXAA
   #define BOOTLOADER_ADDR        0xF4000
-#else
+#elif (defined( NRF52832_XXAA) || defined( NRF52833_XXAA))
   #define BOOTLOADER_ADDR        0x74000
+#else
+  #error "Unsupported MCU"
 #endif
 
 // defined in linker script
