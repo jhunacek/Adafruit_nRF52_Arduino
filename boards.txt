@@ -550,3 +550,59 @@ mdbt50qrx.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
 mdbt50qrx.menu.debug.l3=Level 3 (Segger SystemView)
 mdbt50qrx.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
 mdbt50qrx.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+# ----------------------------------
+# Raytac MDBT50Q-DB-33
+# ----------------------------------
+mdbt50qdb33.name=Raytac MDBT50Q-DB-33 (nRF52833)
+
+# VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
+mdbt50qdb33.vid.0=0x239A
+mdbt50qdb33.pid.0=0x8029
+mdbt50qdb33.vid.1=0x239A
+mdbt50qdb33.pid.1=0x0029
+mdbt50qdb33.vid.2=0x239A
+mdbt50qdb33.pid.2=0x002A
+mdbt50qdb33.vid.3=0x239A
+mdbt50qdb33.pid.3=0x802A
+
+# Upload
+mdbt50qdb33.bootloader.tool=bootburn
+mdbt50qdb33.upload.tool=nrfutil
+mdbt50qdb33.upload.protocol=nrfutil
+mdbt50qdb33.upload.use_1200bps_touch=true
+mdbt50qdb33.upload.wait_for_upload_port=true
+# Flash: 0x6D000 - 0x27000 = 286720 (see nrf52833_s140_v7.ld)
+mdbt50qdb33.upload.maximum_size=286720
+# RAM: 0x20020000 - 0x20006000 (see nrf52833_s140_v7.ld)
+mdbt50qrx.upload.maximum_data_size=106496
+
+# Build
+mdbt50qdb33.build.mcu=cortex-m4
+mdbt50qdb33.build.f_cpu=64000000
+mdbt50qdb33.build.board=MDBT50Q_DB_33
+mdbt50qdb33.build.core=nRF5
+mdbt50qdb33.build.variant=raytac_mdbt50q_db_33
+mdbt50qdb33.build.usb_manufacturer="Raytac Corporation"
+mdbt50qdb33.build.usb_product="Raytac MDBT50Q-DB-33"
+mdbt50qdb33.build.extra_flags=-DNRF52833_XXAA {build.flags.usb}
+mdbt50qdb33.build.ldscript=nrf52833_s140_v7.ld
+mdbt50qdb33.build.vid=0x239A
+mdbt50qdb33.build.pid=0x8029
+
+# SofDevice Menu
+mdbt50qdb33.menu.softdevice.s140v6=0.3.2 SoftDevice s140 7.2.0
+mdbt50qdb33.menu.softdevice.s140v6.build.sd_name=s140
+mdbt50qdb33.menu.softdevice.s140v6.build.sd_version=7.2.0
+mdbt50qdb33.menu.softdevice.s140v6.build.sd_fwid=0x0100
+
+# Debug Menu
+mdbt50qdb33.menu.debug.l0=Level 0 (Release)
+mdbt50qdb33.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+mdbt50qdb33.menu.debug.l1=Level 1 (Error Message)
+mdbt50qdb33.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+mdbt50qdb33.menu.debug.l2=Level 2 (Full Debug)
+mdbt50qdb33.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+mdbt50qdb33.menu.debug.l3=Level 3 (Segger SystemView)
+mdbt50qdb33.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+mdbt50qdb33.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
