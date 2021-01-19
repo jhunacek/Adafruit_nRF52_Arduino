@@ -92,17 +92,32 @@ static const uint8_t A7  = PIN_A7 ;
 /*
  * SPI Interfaces
  */
-#define SPI_INTERFACES_COUNT 1
+#define SPI_INTERFACES_COUNT 2
 
-#define PIN_SPI_MISO         (20)
-#define PIN_SPI_MOSI         (21)
-#define PIN_SPI_SCK          (22)
+// nRF52833 has only one SPIM3 runing at highspeed 32Mhz
+// This assign SPIM3 to either: SPI (0), SPI1 (1).
+// If not defined, default to 0 or SPI.
+#define SPI_32MHZ_INTERFACE  0
 
-static const uint8_t SS   = (24);
+// SPI
+#define PIN_SPI_MISO         (0)
+#define PIN_SPI_MOSI         (4)
+#define PIN_SPI_SCK          (1)
+
+//~ static const uint8_t SS   = (16);
 static const uint8_t MOSI = PIN_SPI_MOSI ;
 static const uint8_t MISO = PIN_SPI_MISO ;
 static const uint8_t SCK  = PIN_SPI_SCK ;
 
+// SPI1
+#define PIN_SPI1_MISO         (9)
+#define PIN_SPI1_MOSI         (3)
+#define PIN_SPI1_SCK          (2)
+
+//~ static const uint8_t SS1   = (31);
+static const uint8_t MOSI1 = PIN_SPI1_MOSI ;
+static const uint8_t MISO1 = PIN_SPI1_MISO ;
+static const uint8_t SCK1  = PIN_SPI1_SCK ;
 /*
  * Wire Interfaces
  */
