@@ -123,8 +123,8 @@ static const uint8_t SCK1  = PIN_SPI1_SCK ;
  */
 #define WIRE_INTERFACES_COUNT 1
 
-#define PIN_WIRE_SDA         (6)
-#define PIN_WIRE_SCL         (7)
+#define PIN_WIRE_SDA         (15)
+#define PIN_WIRE_SCL         (17)
 
 
 #ifdef __cplusplus
