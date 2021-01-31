@@ -22,8 +22,8 @@
 /** Master clock frequency */
 #define VARIANT_MCK       (64000000ul)
 
-#define USE_LFXO      // Board uses 32khz crystal for LF
-// define USE_LFRC    // Board uses RC for LF
+//#define USE_LFXO      // Board uses 32khz crystal for LF
+#define USE_LFRC    // Board uses RC for LF
 
 /*----------------------------------------------------------------------------
  *        Headers
@@ -92,7 +92,8 @@ static const uint8_t A7  = PIN_A7 ;
 /*
  * SPI Interfaces
  */
-#define SPI_INTERFACES_COUNT 2
+//~ #define SPI_INTERFACES_COUNT 2
+#define SPI_INTERFACES_COUNT 1
 
 // nRF52833 has only one SPIM3 runing at highspeed 32Mhz
 // This assign SPIM3 to either: SPI (0), SPI1 (1).
@@ -100,31 +101,37 @@ static const uint8_t A7  = PIN_A7 ;
 #define SPI_32MHZ_INTERFACE  0
 
 // SPI
-#define PIN_SPI_MISO         (0)
-#define PIN_SPI_MOSI         (4)
-#define PIN_SPI_SCK          (1)
+//~ #define PIN_SPI_MISO         (0)
+//~ #define PIN_SPI_MOSI         (4)
+//~ #define PIN_SPI_SCK          (1)
+#define PIN_SPI_MISO         (9)
+#define PIN_SPI_MOSI         (3)
+#define PIN_SPI_SCK          (2)
 
 //~ static const uint8_t SS   = (16);
 static const uint8_t MOSI = PIN_SPI_MOSI ;
 static const uint8_t MISO = PIN_SPI_MISO ;
 static const uint8_t SCK  = PIN_SPI_SCK ;
 
-// SPI1
-#define PIN_SPI1_MISO         (9)
-#define PIN_SPI1_MOSI         (3)
-#define PIN_SPI1_SCK          (2)
+//~ // SPI1
+//~ #define PIN_SPI1_MISO         (9)
+//~ #define PIN_SPI1_MOSI         (3)
+//~ #define PIN_SPI1_SCK          (2)
 
 //~ static const uint8_t SS1   = (31);
-static const uint8_t MOSI1 = PIN_SPI1_MOSI ;
-static const uint8_t MISO1 = PIN_SPI1_MISO ;
-static const uint8_t SCK1  = PIN_SPI1_SCK ;
+//~ static const uint8_t MOSI1 = PIN_SPI1_MOSI ;
+//~ static const uint8_t MISO1 = PIN_SPI1_MISO ;
+//~ static const uint8_t SCK1  = PIN_SPI1_SCK ;
 /*
  * Wire Interfaces
  */
-#define WIRE_INTERFACES_COUNT 1
+#define WIRE_INTERFACES_COUNT 2
 
-#define PIN_WIRE_SDA         (15)
-#define PIN_WIRE_SCL         (17)
+#define PIN_WIRE_SDA               (15)
+#define PIN_WIRE_SCL               (17)
+#define PIN_WIRE1_SDA              (0)
+#define PIN_WIRE1_SCL              (1)
+
 
 
 #ifdef __cplusplus
