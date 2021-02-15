@@ -587,8 +587,10 @@ mdbt50qdb33.build.usb_manufacturer="Raytac Corporation"
 mdbt50qdb33.build.usb_product="Raytac MDBT50Q-DB-33"
 mdbt50qdb33.build.extra_flags=-DNRF52833_XXAA {build.flags.usb}
 mdbt50qdb33.build.ldscript=nrf52833_s140_v7.ld
-mdbt50qdb33.build.vid=0x239A
-mdbt50qdb33.build.pid=0x8029
+#mdbt50qdb33.build.vid=0x239A
+#mdbt50qdb33.build.pid=0x8029
+mdbt50qdb33.build.vid=0x1915
+mdbt50qdb33.build.pid=0x521F
 
 # SofDevice Menu
 mdbt50qdb33.menu.softdevice.s140v6=0.3.2 SoftDevice s140 7.2.0
